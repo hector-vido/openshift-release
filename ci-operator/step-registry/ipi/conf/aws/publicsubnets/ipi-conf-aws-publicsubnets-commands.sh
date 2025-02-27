@@ -4,7 +4,18 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
-export AWS_SHARED_CREDENTIALS_FILE="${CLUSTER_PROFILE_DIR}/.awscred"
+if [[ "${OPENSHIFT_INSTALL_AWS_PUBLIC_ONLY:-true}" != "true" ]]
+then
+	return
+fi
+
+if [[ -f "${SHARED_DIR}/aws_minimal_permission" ]]; then
+    echo "Setting AWS credential with minimal permision for installer"
+    export AWS_SHARED_CREDENTIALS_FILE=${SHARED_DIR}/aws_minimal_permission
+else
+    export AWS_SHARED_CREDENTIALS_FILE=${CLUSTER_PROFILE_DIR}/.awscred
+fi
+#export AWS_SHARED_CREDENTIALS_FILE="${CLUSTER_PROFILE_DIR}/.awscred"
 
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
