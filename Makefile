@@ -37,7 +37,7 @@ check-services:
 	core-services/_hack/validate-core-services.sh services
 	@echo "Service config check: PASS"
 
-# applyconfig is https://github.com/openshift/ci-tools/tree/master/cmd/applyconfig
+# applyconfig is https://github.com/openshift/ci-tools/tree/main/cmd/applyconfig
 
 dry-core:
 	applyconfig --config-dir core-services
@@ -377,8 +377,8 @@ update_github_ldap_mapping_config_map:
 .PHONY: update_github_ldap_mapping_config_map
 
 download_dp_crd:
-	curl -o clusters/build-clusters/common/testimagestreamtagimport.yaml https://raw.githubusercontent.com/openshift/ci-tools/master/pkg/api/testimagestreamtagimport/v1/ci.openshift.io_testimagestreamtagimports.yaml
-	curl -o clusters/app.ci/prow/01_crd/pullrequestpayloadqualificationruns.yaml https://raw.githubusercontent.com/openshift/ci-tools/master/pkg/api/pullrequestpayloadqualification/v1/ci.openshift.io_pullrequestpayloadqualificationruns.yaml
+	curl -o clusters/build-clusters/common/testimagestreamtagimport.yaml https://raw.githubusercontent.com/openshift/ci-tools/main/pkg/api/testimagestreamtagimport/v1/ci.openshift.io_testimagestreamtagimports.yaml
+	curl -o clusters/app.ci/prow/01_crd/pullrequestpayloadqualificationruns.yaml https://raw.githubusercontent.com/openshift/ci-tools/main/pkg/api/pullrequestpayloadqualification/v1/ci.openshift.io_pullrequestpayloadqualificationruns.yaml
 .PHONY: download_dp_crd
 
 download_crt_crd:
