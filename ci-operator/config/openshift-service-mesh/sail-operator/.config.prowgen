@@ -1,0 +1,11 @@
+slack_reporter:
+    - channel: '#istio-notifications'
+      job_names:
+        - periodic-ci-openshift-service-mesh-sail-operator-main-ocp-4.18-sync-upstream
+        - periodic-ci-openshift-service-mesh-sail-operator-main-ocp-4.18-sync-upstream
+        - periodic-ci-openshift-service-mesh-sail-operator-release-3.0-ocp-4.18-sync-upstream
+        - periodic-ci-openshift-service-mesh-sail-operator-release-3.0-ocp-4.18-sync-upstream
+      job_states_to_report:
+        - failure
+        - error
+      report_template: ':failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>'

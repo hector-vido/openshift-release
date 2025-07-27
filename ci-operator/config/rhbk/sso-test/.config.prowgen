@@ -1,13 +1,21 @@
 slack_reporter:
-- channel: '#team-keycloak-continuous-testing'
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-job_names:
-- rhsso-interop-aws
-- rhsso-interop-aws-fips
+    - channel: '#team-keycloak-continuous-testing'
+      job_names:
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.14-lp-interop-rhsso-interop-ibmcloud
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.15-lp-interop-rhsso-interop-ibmcloud
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.15-lp-rosa-hypershift-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.16-lp-interop-rhsso-interop-ibmcloud
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.16-lp-rosa-classic-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.16-lp-rosa-hypershift-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.17-lp-interop-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.17-lp-rosa-classic-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.17-lp-rosa-hypershift-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.18-lp-interop-rhsso-interop-aws
+        - periodic-ci-rhbk-sso-test-main-rhsso-product-ocp4.19-lp-interop-rhsso-interop-aws
+        - rhsso-interop-aws
+        - rhsso-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

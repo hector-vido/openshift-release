@@ -1,0 +1,37 @@
+slack_reporter:
+    - channel: '#forum-opct-updates'
+      job_names:
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.14-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.14-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.15-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.15-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.15-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.15-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.16-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.16-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.16-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.16-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-none-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-none-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-none-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.17-platform-none-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-external-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-none-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-none-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-none-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.18-platform-none-vsphere-upgrade
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.19-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.19-platform-external-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.19-platform-none-vsphere
+        - periodic-ci-redhat-openshift-ecosystem-opct-main-4.19-platform-none-vsphere
+      job_states_to_report:
+        - failure
+        - error
+      report_template: ':x: Job {{.Spec.Job}} failed. <{{.Status.URL}}|View logs>'

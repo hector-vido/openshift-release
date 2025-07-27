@@ -1,0 +1,14 @@
+slack_reporter:
+    - channel: '#kie-qe-notifications'
+      job_names:
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.14-lp-interop-rhba-interop-aws
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.14-lp-interop-rhba-interop-aws
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.15-lp-interop-rhba-interop-aws
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.15-lp-interop-rhba-interop-aws
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.16-lp-interop-rhba-interop-aws
+        - periodic-ci-kiegroup-kie-cloud-tests-container-main-rhba-ocp4.16-lp-interop-rhba-interop-aws
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

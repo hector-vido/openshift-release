@@ -1,0 +1,51 @@
+slack_reporter:
+    - channel: '#tf-provider-qe-ci'
+      job_names:
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-classic-full-resource-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-classic-full-resource-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-day1-supplemental-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-day1-supplemental-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-advanced-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-advanced-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-advanced-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-advanced-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-arm-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-arm-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-encryption-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-encryption-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-full-resource-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-full-resource-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-network-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-network-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-private-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-private-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-private-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-private-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-upgrade-y-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-upgrade-y-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-upgrade-z-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-hcp-upgrade-z-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-day1-negative-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-day1-negative-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-advanced-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-day1-negative-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-day1-negative-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-private-medium-low-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-shared-vpc-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-shared-vpc-critical-high-f3
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-upgrade-y-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-upgrade-y-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-upgrade-z-f7
+        - periodic-ci-terraform-redhat-terraform-provider-rhcs-main-e2e-rosa-sts-upgrade-z-f7
+      job_states_to_report:
+        - success
+        - failure
+        - aborted
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :slack-yellow: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

@@ -18,7 +18,7 @@ periodics:
   name: periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.14-lp-interop-camel-quarkus-interop-ibmcloud
   reporter_config:
     slack:
-      channel: '#camel-quarkus-qe'
+      channel: '#team-camel-quarkus-qe'
       job_states_to_report:
       - success
       - failure

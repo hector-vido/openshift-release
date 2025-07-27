@@ -1,0 +1,55 @@
+slack_reporter:
+    - channel: '#image-based-ci'
+      job_names:
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-seedgen-aws-ocp-4-15
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-seedgen-aws-ocp-4-15
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.15-nightly-4.15-upgrade-from-stable-4.14-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-seedgen-aws-ocp-4-16
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-seedgen-aws-ocp-4-16
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.16-nightly-4.16-upgrade-from-stable-4.15-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-seedgen-aws-ocp-4-17
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-seedgen-aws-ocp-4-17
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.17-nightly-4.17-upgrade-from-stable-4.16-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-image-based-install
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-seedgen-aws-ocp-4-18
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-seedgen-aws-ocp-4-18
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-parallel-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-parallel-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-serial-conformance
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-serial-conformance-baseline
+        - periodic-ci-openshift-kni-lifecycle-agent-release-4.18-nightly-4.18-upgrade-from-stable-4.17-image-based-upgrade-e2e-serial-conformance-baseline
+      job_states_to_report:
+        - failure
+        - success
+        - error
+        - aborted
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :alert-siren: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

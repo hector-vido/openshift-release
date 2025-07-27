@@ -1,13 +1,19 @@
 slack_reporter:
-- channel: '#springboot-interop'
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> {{end}}'
-  job_names:
-  - springboot-interop-aws
-  - springboot-interop-aws-fips
+    - channel: '#springboot-interop'
+      job_names:
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.14-lp-interop-springboot-interop-ibmcloud
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.15-lp-interop-springboot-interop-ibmcloud
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.16-lp-interop-springboot-interop-ibmcloud
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.17-lp-interop-springboot-interop-aws
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.17-lp-interop-springboot-interop-aws-fips
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.17-lp-interop-springboot-interop-ibmcloud
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.18-lp-interop-springboot-interop-aws
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.19-lp-interop-springboot-interop-aws
+        - periodic-ci-rhoar-qe-spring-boot-openshift-interop-tests-main-springboot-ocp4.19-lp-interop-springboot-interop-aws-fips
+        - springboot-interop-aws
+        - springboot-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

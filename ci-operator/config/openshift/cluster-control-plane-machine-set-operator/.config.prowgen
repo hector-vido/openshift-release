@@ -1,0 +1,9 @@
+slack_reporter:
+    - channel: '#shiftstack-bot'
+      job_names:
+        - periodic-ci-openshift-cluster-control-plane-machine-set-operator-release-4.14-periodics-e2e-openstack
+        - periodic-ci-openshift-cluster-control-plane-machine-set-operator-release-4.14-periodics-e2e-openstack
+      job_states_to_report:
+        - failure
+        - error
+      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :volcano:'

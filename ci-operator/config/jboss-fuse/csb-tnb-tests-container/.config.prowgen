@@ -1,13 +1,18 @@
 slack_reporter:
-- channel: "#csb-qe"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names: 
-  - csb-interop-aws-latest
-  - csb-interop-aws-latest-fips
+    - channel: '#csb-qe'
+      job_names:
+        - csb-interop-aws-latest
+        - csb-interop-aws-latest-fips
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.14-lp-interop-csb-interop-ibmcloud-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.15-lp-interop-csb-interop-ibmcloud-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.16-lp-interop-csb-interop-ibmcloud-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.17-lp-interop-csb-interop-ibmcloud-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.18-lp-interop-csb-interop-aws-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.18-lp-interop-csb-interop-aws-latest-fips
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.19-lp-interop-csb-interop-aws-latest
+        - periodic-ci-jboss-fuse-csb-tnb-tests-container-main-csb-ocp4.19-lp-interop-csb-interop-aws-latest-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

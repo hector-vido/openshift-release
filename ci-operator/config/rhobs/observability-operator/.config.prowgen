@@ -1,0 +1,28 @@
+slack_reporter:
+    - channel: '#observability-operator-cicd'
+      job_names:
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.12-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.12-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.13-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.13-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.14-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.14-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.15-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.15-azure-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.15-gcp-interop-coo-production
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.15-gcp-interop-coo-production
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.17-gcp-coo-stage-dast
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.17-gcp-coo-stage-dast
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.18-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.18-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.19-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-amd64-ocp-4.19-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-arm64-ocp-4.16-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-arm64-ocp-4.16-gcp-coo-stage
+        - periodic-ci-rhobs-observability-operator-main-upstream-ocp-4.19-aws-coo-compat
+        - periodic-ci-rhobs-observability-operator-main-upstream-ocp-4.19-aws-coo-compat
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

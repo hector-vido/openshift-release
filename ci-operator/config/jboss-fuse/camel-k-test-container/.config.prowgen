@@ -1,13 +1,26 @@
 slack_reporter:
-- channel: "#camel-k-notifications"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names:
-  - camel-k-interop-aws
-  - camel-k-interop-aws-fips
+    - channel: '#camel-k-notifications'
+      job_names:
+        - camel-k-interop-aws
+        - camel-k-interop-aws-fips
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.14-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.14-lp-interop-camel-k-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.14-lp-rosa-classic-camel-k-interop-aws-rosa-sts
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.15-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.15-lp-interop-camel-k-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.16-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.16-lp-rosa-classic-camel-k-interop-aws-rosa-sts
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.17-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.17-lp-interop-camel-k-interop-aws-fips
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.17-lp-rosa-classic-camel-k-interop-aws-rosa-sts
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.18-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.18-lp-interop-camel-k-interop-aws-fips
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.19-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.19-lp-interop-camel-k-interop-aws-fips
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.20-lp-interop-camel-k-interop-aws
+        - periodic-ci-jboss-fuse-camel-k-test-container-main-camel-k-ocp4.20-lp-interop-camel-k-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

@@ -1,0 +1,34 @@
+slack_reporter:
+    - channel: '#rhdh-e2e-test-alerts'
+      job_names:
+        - periodic-ci-redhat-developer-rhdh-main-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-main-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-main-e2e-tests-upgrade-nightly
+        - periodic-ci-redhat-developer-rhdh-main-e2e-tests-upgrade-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-aks-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-aks-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-gke-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-gke-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly-ocp-v4-15
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly-ocp-v4-15
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly-ocp-v4-16
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-nightly-ocp-v4-16
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-operator-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-operator-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-osd-gcp-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-osd-gcp-helm-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-osd-gcp-operator-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.5-e2e-tests-osd-gcp-operator-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.6-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.6-e2e-tests-auth-providers-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.6-e2e-tests-upgrade-nightly
+        - periodic-ci-redhat-developer-rhdh-release-1.6-e2e-tests-upgrade-nightly
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :done-circle-check: {{else}}<!subteam^S07BMJ56R8S> <@U08UP0REWG1> :failed: {{end}} Job *`{{.Spec.Job}}`* ended with *{{.Status.State}}*. Open Report: <https://gcsweb-ci.apps.ci.l2s4.p1.openshiftapps.com/gcs/test-platform-results/logs/periodic-ci-redhat-developer-rhdh-main-e2e-tests-upgrade-nightly/{{.Status.BuildID}}/artifacts/e2e-tests-upgrade-nightly/redhat-developer-rhdh-upgrade-nightly/artifacts/showcase-upgrade-nightly/index.html|nightly> | <https://gcsweb-ci.apps.ci.l2s4.p1.openshiftapps.com/gcs/test-platform-results/logs/periodic-ci-redhat-developer-rhdh-main-e2e-tests-upgrade-nightly/{{.Status.BuildID}}/artifacts/e2e-tests-upgrade-nightly/redhat-developer-rhdh-upgrade-nightly/artifacts/|Open artifacts> | <{{.Status.URL}}|View logs>'

@@ -1,25 +1,42 @@
 slack_reporter:
-- channel: "#forum-p2p-cspi"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names: 
-  - openshift-pipelines-serverless-rosa-classic-417-rc
-  - openshift-pipelines-serverless-rosa-classic-416-iib
-- channel: "#tektoncd-pipeline-ci"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names: 
-  - openshift-pipelines-interop-aws
-  - openshift-pipelines-interop-aws-fips
+    - channel: '#forum-p2p-cspi'
+      job_names:
+        - openshift-pipelines-serverless-rosa-classic-416-iib
+        - openshift-pipelines-serverless-rosa-classic-417-rc
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.14-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.14-lp-interop-openshift-pipelines-interop-ibmcloud
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.14-lp-rosa-classic-openshift-pipelines-interop-rosa-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.15-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.15-lp-interop-openshift-pipelines-interop-ibmcloud
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.15-lp-rosa-classic-openshift-pipelines-interop-rosa-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.15-lp-rosa-hypershift-openshift-pipelines-rosa-hypershift
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.16-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.14-openshift-pipelines-ocp4.16-lp-interop-openshift-pipelines-interop-ibmcloud
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.15-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.16-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.16-lp-rosa-hypershift-openshift-pipelines-rosa-hypershift
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.17-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.17-lp-interop-openshift-pipelines-interop-aws-fips
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws-fips
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-p2p-rosa-classic-openshift-pipelines-serverless-rosa-classic-416-iib
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.15-openshift-pipelines-p2p-rosa-classic-openshift-pipelines-serverless-rosa-classic-417-rc
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.16-openshift-pipelines-ocp4.17-lp-rosa-classic-openshift-pipelines-interop-rosa-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.17-lp-rosa-classic-openshift-pipelines-interop-rosa-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.17-lp-rosa-hypershift-openshift-pipelines-rosa-hypershift
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws
+        - periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'
+    - channel: '#tektoncd-pipeline-ci'
+      job_names:
+        - openshift-pipelines-interop-aws
+        - openshift-pipelines-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

@@ -1,17 +1,32 @@
-private: true
 expose: true
+private: true
 slack_reporter:
-  - channel: '#eap-ocp-ci-results'
-    job_states_to_report:
-      - success
-      - failure
-      - error
-    report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire:
-        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> {{end}}'
-    job_names:
-      - eap-74-interop-aws
-      - eap-74-interop-aws-fips
-      - eap-74-xp-interop-aws
-      - eap-74-xp-interop-aws-fips
+    - channel: '#eap-ocp-ci-results'
+      job_names:
+        - eap-74-interop-aws
+        - eap-74-interop-aws-fips
+        - eap-74-xp-interop-aws
+        - eap-74-xp-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.14-lp-interop-eap-74-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.14-lp-interop-eap-74-xp-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.15-lp-interop-eap-74-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.15-lp-interop-eap-74-xp-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.16-lp-interop-eap-74-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.16-lp-interop-eap-74-xp-interop-ibmcloud
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.17-lp-interop-eap-74-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.17-lp-interop-eap-74-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.17-lp-interop-eap-74-xp-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.17-lp-interop-eap-74-xp-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.18-lp-interop-eap-74-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.18-lp-interop-eap-74-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.18-lp-interop-eap-74-xp-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.18-lp-interop-eap-74-xp-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.19-lp-interop-eap-74-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.19-lp-interop-eap-74-interop-aws-fips
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.19-lp-interop-eap-74-xp-interop-aws
+        - periodic-ci-jboss-eap-qe-openshift-eap-tests-pit-7.4.x-eap-ocp4.19-lp-interop-eap-74-xp-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

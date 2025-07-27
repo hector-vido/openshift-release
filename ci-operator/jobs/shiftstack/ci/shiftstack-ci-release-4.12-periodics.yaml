@@ -21,9 +21,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -102,9 +101,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -183,9 +181,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -264,9 +261,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -345,9 +341,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -426,9 +421,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -507,9 +501,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -588,9 +581,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -669,9 +661,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -750,9 +741,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -831,9 +821,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -912,9 +901,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -993,9 +981,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:
@@ -1075,9 +1062,8 @@ periodics:
       channel: '#shiftstack-bot'
       job_states_to_report:
       - failure
-      - error
-      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> :volcano:'
+      report_template: ':low-battery: Quota check failed on mecha central. <{{ .Status.URL
+        }}|View logs>'
   spec:
     containers:
     - args:

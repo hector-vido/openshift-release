@@ -1,16 +1,27 @@
-private: true
 expose: true
-
+private: true
 slack_reporter:
-- channel: "#mtc-interop"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names:
-  - mtc-interop-aws
-  - mtc-interop-aws-fips
+    - channel: '#mtc-interop'
+      job_names:
+        - mtc-interop-aws
+        - mtc-interop-aws-fips
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.14-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.14-lp-rosa-classic-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.14-lp-rosa-hypershift-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.15-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.15-lp-rosa-hypershift-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.16-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.16-lp-rosa-classic-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.16-lp-rosa-hypershift-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.17-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.17-lp-interop-mtc-interop-aws-fips
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.17-lp-rosa-classic-mtc-interop-aws-rosa
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.18-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.18-lp-interop-mtc-interop-aws-fips
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.19-lp-interop-mtc-interop-aws
+        - periodic-ci-mtc-qe-mtc-e2e-qev2-master-mtc1.8-ocp4.19-lp-interop-mtc-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

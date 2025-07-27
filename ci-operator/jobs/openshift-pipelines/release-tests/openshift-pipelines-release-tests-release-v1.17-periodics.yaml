@@ -19,7 +19,7 @@ periodics:
   name: periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.17-lp-rosa-classic-openshift-pipelines-interop-rosa-aws
   reporter_config:
     slack:
-      channel: '#tektoncd-pipeline-ci'
+      channel: '#forum-p2p-cspi'
       job_states_to_report:
       - success
       - failure
@@ -105,7 +105,7 @@ periodics:
   name: periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.17-lp-rosa-hypershift-openshift-pipelines-rosa-hypershift
   reporter_config:
     slack:
-      channel: '#tektoncd-pipeline-ci'
+      channel: '#forum-p2p-cspi'
       job_states_to_report:
       - success
       - failure
@@ -191,7 +191,7 @@ periodics:
   name: periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws
   reporter_config:
     slack:
-      channel: '#tektoncd-pipeline-ci'
+      channel: '#forum-p2p-cspi'
       job_states_to_report:
       - success
       - failure
@@ -277,7 +277,7 @@ periodics:
   name: periodic-ci-openshift-pipelines-release-tests-release-v1.17-openshift-pipelines-ocp4.18-lp-interop-openshift-pipelines-interop-aws-fips
   reporter_config:
     slack:
-      channel: '#tektoncd-pipeline-ci'
+      channel: '#forum-p2p-cspi'
       job_states_to_report:
       - success
       - failure

@@ -1,15 +1,89 @@
-private: true
 expose: true
+private: true
 slack_reporter:
-- channel: "#quay-qe"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names:
-  - quay-e2e-tests-quay314-ocp420-lp-interop
-  - quay-e2e-tests-quay314-ocp420-lp-interop-fips
+    - channel: '#quay-qe'
+      job_names:
+        - periodic-ci-quay-quay-tests-master-ocp-412-quay-quay-e2e-tests-quay313-ocp412
+        - periodic-ci-quay-quay-tests-master-ocp-413-quay-quay-e2e-tests-quay313-ocp413
+        - periodic-ci-quay-quay-tests-master-ocp-414-quay-quay-e2e-tests-quay313-ocp414-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-415-quay-nightly-quay-e2e-tests-quay313-nightly-ocp415
+        - periodic-ci-quay-quay-tests-master-ocp-415-quay-quay-e2e-tests-quay313-ocp415-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-416-quay-quay-e2e-tests-quay313-ocp416-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-417-quay-quay-e2e-tests-quay313-ocp417-aws-sts
+        - periodic-ci-quay-quay-tests-master-ocp-417-quay-quay-e2e-tests-quay313-ocp417-unmanaged-tls
+        - periodic-ci-quay-quay-tests-master-ocp-417-quay-quay-e2e-tests-quay313-ocp417-virtual-builder
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-acs-violations-check-quay315
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay311-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay312-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-aws-s3-rds-postgresql13-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-aws-s3-rds-postgresql14-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-aws-s3-rds-postgresql15-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-aws-s3-rds-postgresql16-ocp418
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-aws-s3
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-azure
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-fips
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-gcp
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-ibmcos
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-lp-interop-fips
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay313-ocp418-netappgrid
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay314-ocp418-aws-sts
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay314-ocp418-virtual-builder
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay315-gcp-sql
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay315-ocp418-aws-s3-couldfront
+        - periodic-ci-quay-quay-tests-master-ocp-418-quay-quay-e2e-tests-quay315-ocp418-unmanaged-tls
+        - periodic-ci-quay-quay-tests-master-ocp-419-quay-quay-e2e-tests-quay313-ocp419-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-419-quay-quay-e2e-tests-quay313-ocp419-lp-interop-fips
+        - periodic-ci-quay-quay-tests-master-ocp-420-quay-quay-e2e-tests-quay314-ocp420-lp-interop
+        - periodic-ci-quay-quay-tests-master-ocp-420-quay-quay-e2e-tests-quay314-ocp420-lp-interop-fips
+        - periodic-ci-quay-quay-tests-master-omr-ocp412-quay-omr-tests-omr-ocp412-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp412-unreleased-quay-omr-tests-omr-ocp412-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-omr-ocp414-quay-omr-tests-omr-ocp414-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp414-unreleased-quay-omr-tests-omr-ocp414-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-omr-ocp415-quay-omr-tests-omr-ocp415-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp415-unreleased-quay-omr-tests-omr-ocp415-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-omr-ocp416-quay-omr-tests-omr-ocp416-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp416-unreleased-quay-omr-tests-omr-ocp416-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-omr-ocp417-quay-omr-tests-omr-ocp417-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp417-unreleased-quay-omr-tests-omr-ocp417-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-omr-ocp418-quay-omr-tests-omr-ocp418-disconnected
+        - periodic-ci-quay-quay-tests-master-omr-ocp418-unreleased-quay-omr-tests-omr-ocp418-disconnected-unreleased
+        - periodic-ci-quay-quay-tests-master-quay-api-quay-e2e-tests-quay313-api-testing
+        - periodic-ci-quay-quay-tests-master-quay-aro-ocp-quay-e2e-tests-quay312-aro-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-aro-ocp-quay-e2e-tests-quay313-aro-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-aro-ocp-quay-e2e-tests-quay314-aro-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-dast-quay-dast-test-prod-quay-io
+        - periodic-ci-quay-quay-tests-master-quay-dast-quay-dast-test-quay313
+        - periodic-ci-quay-quay-tests-master-quay-dast-quay-dast-test-stage-quay-io
+        - periodic-ci-quay-quay-tests-master-quay-e2e-tests-quay313-ocp416-proxy
+        - periodic-ci-quay-quay-tests-master-quay-hypershift-quay-e2e-tests-quay312-hypershift-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-hypershift-quay-e2e-tests-quay313-hypershift-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-hypershift-quay-e2e-tests-quay314-hypershift-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-newui-stress-quay-e2e-tests-quay312-ocp416-newui-stress
+        - periodic-ci-quay-quay-tests-master-quay-oci-conformance-quay-oci-conformance-test-quay315
+        - periodic-ci-quay-quay-tests-master-quay-operator-test-quay315-ocp418-operator-test-allns
+        - periodic-ci-quay-quay-tests-master-quay-operator-test-quay315-ocp418-operator-test-singlens
+        - periodic-ci-quay-quay-tests-master-quay-osd-ocp-quay-e2e-tests-quay312-osd-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-osd-ocp-quay-e2e-tests-quay313-osd-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-osd-ocp-quay-e2e-tests-quay314-osd-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-performance-quay-e2e-tests-quay315-performance-test
+        - periodic-ci-quay-quay-tests-master-quay-performance-quay-e2e-tests-quayio-stage-performance-test
+        - periodic-ci-quay-quay-tests-master-quay-quayio-quay-quayio-push-pull-images-monitoring
+        - periodic-ci-quay-quay-tests-master-quay-rosa-ocp-quay-e2e-tests-quay312-rosa-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-rosa-ocp-quay-e2e-tests-quay313-rosa-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-rosa-ocp-quay-e2e-tests-quay314-rosa-ocp419
+        - periodic-ci-quay-quay-tests-master-quay-sdl-quay-sdl-check-images-vulnerabilities-quay313
+        - periodic-ci-quay-quay-tests-master-quay-sdl-quay-sdl-check-images-vulnerabilities-quay314
+        - periodic-ci-quay-quay-tests-master-quay-sdl-quay-sdl-check-images-vulnerabilities-quay39
+        - periodic-ci-quay-quay-tests-master-quay-stage-quayio-quay-stage-quayio-validation-testing
+        - periodic-ci-quay-quay-tests-master-quay-upgrade-cso-quay315-ocp417-upgrade
+        - periodic-ci-quay-quay-tests-master-quay-upgrade-qbo-quay315-ocp417-upgrade
+        - periodic-ci-quay-quay-tests-master-quay-upgrade-quay315-ocp417-upgrade
+        - periodic-ci-quay-quay-tests-master-stage-quay-io-quay-e2e-tests-stage-quay-io
+        - quay-e2e-tests-quay314-ocp420-lp-interop
+        - quay-e2e-tests-quay314-ocp420-lp-interop-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

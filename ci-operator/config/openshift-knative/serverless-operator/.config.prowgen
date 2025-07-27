@@ -1,13 +1,36 @@
 slack_reporter:
-- channel: "#serverless-ci"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                     Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names: 
-  - operator-e2e-interop-aws-ocp419
-  - operator-e2e-interop-aws-ocp419-fips
+    - channel: '#serverless-ci'
+      job_names:
+        - operator-e2e-interop-aws-ocp419
+        - operator-e2e-interop-aws-ocp419-fips
+        - periodic-ci-openshift-knative-serverless-operator-main-414-kitchensink-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-kitchensink-upgrade-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-mesh-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-operator-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-test-soak-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-test-upgrade-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-ui-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-414-upstream-e2e-kafka-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-aws-ovn-e2e-aws-ovn-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-azure-e2e-azure-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-gcp-e2e-gcp-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-hypershift-e2e-hypershift-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-kitchensink-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-kitchensink-upgrade-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-mesh-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-operator-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-osd-e2e-osd-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-single-node-e2e-sno-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-419-test-soak-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-test-upgrade-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-ui-e2e-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-upstream-e2e-kafka-c
+        - periodic-ci-openshift-knative-serverless-operator-main-419-vsphere-e2e-vsphere-continuous
+        - periodic-ci-openshift-knative-serverless-operator-main-ocp4.19-lp-rosa-classic-operator-e2e-rosa-aws
+        - periodic-ci-openshift-knative-serverless-operator-main-ocp4.20-lp-interop-operator-e2e-interop-aws-ocp420
+        - periodic-ci-openshift-knative-serverless-operator-main-ocp4.20-lp-interop-operator-e2e-interop-aws-ocp420-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

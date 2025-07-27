@@ -1,13 +1,19 @@
 slack_reporter:
-- channel: "#helm-interop"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names:
-  - helm-interop-aws
-  - helm-interop-aws-fips
+    - channel: '#helm-interop'
+      job_names:
+        - helm-interop-aws
+        - helm-interop-aws-fips
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.14-lp-interop-helm-interop-aws
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.14-lp-interop-helm-interop-ibmcloud
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.15-lp-interop-helm-interop-aws
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.15-lp-interop-helm-interop-ibmcloud
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.16-lp-interop-helm-interop-aws
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.16-lp-interop-helm-interop-ibmcloud
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.17-lp-interop-helm-interop-ibmcloud
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.18-lp-interop-helm-interop-aws
+        - periodic-ci-redhat-developer-helm-release-3.11-helm-ocp4.18-lp-interop-helm-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

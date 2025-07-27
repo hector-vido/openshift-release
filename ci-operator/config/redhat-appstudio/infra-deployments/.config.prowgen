@@ -1,0 +1,12 @@
+slack_reporter:
+    - channel: '#app-studio-ci-reports'
+      job_names:
+        - periodic-ci-redhat-appstudio-infra-deployments-main-appstudio-e2e-tests-periodic
+        - periodic-ci-redhat-appstudio-infra-deployments-main-appstudio-e2e-tests-periodic
+        - periodic-ci-redhat-appstudio-infra-deployments-main-konflux-openshift-upgrade-periodic
+        - periodic-ci-redhat-appstudio-infra-deployments-main-konflux-openshift-upgrade-periodic
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{ if eq .Status.State "success" }} :greatsuccess: {{ else }} :anger_meow: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>'

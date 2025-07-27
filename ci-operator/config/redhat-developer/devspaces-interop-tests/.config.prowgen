@@ -1,13 +1,31 @@
 slack_reporter:
-- channel: '#devspaces-interop-testing'
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}*
-    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire:
-    Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>
-    {{end}}'
-  job_names:
-  - devspaces-interop-aws
-  - devspaces-interop-aws-fips
+    - channel: '#devspaces-interop-testing'
+      job_names:
+        - devspaces-interop-aws
+        - devspaces-interop-aws-fips
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.14-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.14-lp-interop-devspaces-interop-ibmcloud
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.14-lp-rosa-classic-devspaces-rosa-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.15-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.15-lp-interop-devspaces-interop-ibmcloud
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.15-lp-rosa-classic-devspaces-rosa-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.15-lp-rosa-hypershift-devspaces-aws-rosa-hypershift
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-interop-devspaces-interop-aws-fips
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-interop-devspaces-interop-ibmcloud
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-interop-devspaces-interop-ibmcloud-fips
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-rosa-classic-devspaces-rosa-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.16-lp-rosa-hypershift-devspaces-aws-rosa-hypershift
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.17-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.17-lp-interop-devspaces-interop-ibmcloud
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.17-lp-rosa-classic-devspaces-rosa-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.17-lp-rosa-hypershift-devspaces-aws-rosa-hypershift
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.18-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.18-lp-interop-devspaces-interop-aws-fips
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.19-lp-interop-devspaces-interop-aws
+        - periodic-ci-redhat-developer-devspaces-interop-tests-main-devspaces-ocp4.19-lp-interop-devspaces-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

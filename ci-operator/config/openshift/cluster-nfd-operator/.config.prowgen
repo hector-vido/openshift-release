@@ -1,0 +1,14 @@
+slack_reporter:
+    - channel: '#kmm-nfd-gpu-ci'
+      job_names:
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.14-ocp4.14-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.14-ocp4.14-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.15-ocp4.15-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.15-ocp4.15-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.16-ocp4.16-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+        - periodic-ci-openshift-cluster-nfd-operator-release-4.16-ocp4.16-lp-rosa-hypershift-nfd-e2e-master-aws-rosa-hypershift
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

@@ -6792,8 +6792,9 @@ periodics:
   name: periodic-ci-quay-quay-tests-master-quay-quayio-quay-quayio-push-pull-images-monitoring
   reporter_config:
     slack:
-      channel: '#oncall-quay'
+      channel: '#quay-qe'
       job_states_to_report:
+      - success
       - failure
       - error
       report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
@@ -7675,8 +7676,9 @@ periodics:
   name: periodic-ci-quay-quay-tests-master-quay-stage-quayio-quay-stage-quayio-validation-testing
   reporter_config:
     slack:
-      channel: '#oncall-quay'
+      channel: '#quay-qe'
       job_states_to_report:
+      - success
       - failure
       - error
       report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*

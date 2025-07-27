@@ -193,10 +193,10 @@ periodics:
       - success
       - failure
       - error
-      report_template: '{{if eq .Status.State "success"}} :green_jenkins_circle: Job
-        *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>
-        {{else}} :red_jenkins_circle: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> {{end}}'
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
+        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
+        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
+        logs> {{end}}'
   spec:
     containers:
     - args:
@@ -363,10 +363,10 @@ periodics:
       - success
       - failure
       - error
-      report_template: '{{if eq .Status.State "success"}} :green_jenkins_circle: Job
-        *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>
-        {{else}} :red_jenkins_circle: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> {{end}}'
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
+        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
+        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
+        logs> {{end}}'
   spec:
     containers:
     - args:
@@ -533,10 +533,10 @@ periodics:
       - success
       - failure
       - error
-      report_template: '{{if eq .Status.State "success"}} :green_jenkins_circle: Job
-        *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>
-        {{else}} :red_jenkins_circle: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs> {{end}}'
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
+        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
+        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
+        logs> {{end}}'
   spec:
     containers:
     - args:
@@ -945,7 +945,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.14-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1031,7 +1031,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.15-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1118,7 +1118,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.16-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1205,7 +1205,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.17-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1292,7 +1292,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.17-lp-interop-rhscl-interop-aws-fips
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1379,7 +1379,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.18-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1466,7 +1466,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.19-lp-interop-rhscl-interop-aws
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure
@@ -1553,7 +1553,7 @@ periodics:
   name: periodic-ci-sclorg-ansible-tests-master-rhscl-ocp4.19-lp-interop-rhscl-interop-aws-fips
   reporter_config:
     slack:
-      channel: '#proj-sclorg-bots'
+      channel: '#team-dotnet-eng'
       job_states_to_report:
       - success
       - failure

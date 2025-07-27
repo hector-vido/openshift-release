@@ -1,0 +1,13 @@
+slack_reporter:
+    - channel: '#shiftstack-bot'
+      job_names:
+        - periodic-ci-openshift-cluster-api-actuator-pkg-master-e2e-openstack-operator-periodic
+        - periodic-ci-openshift-cluster-api-actuator-pkg-master-e2e-openstack-operator-periodic
+        - periodic-ci-openshift-cluster-api-actuator-pkg-release-4.13-e2e-openstack-operator-periodic
+        - periodic-ci-openshift-cluster-api-actuator-pkg-release-4.13-e2e-openstack-operator-periodic
+        - periodic-ci-openshift-cluster-api-actuator-pkg-release-4.14-e2e-openstack-operator-periodic
+        - periodic-ci-openshift-cluster-api-actuator-pkg-release-4.14-e2e-openstack-operator-periodic
+      job_states_to_report:
+        - failure
+        - error
+      report_template: ':volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :volcano:'

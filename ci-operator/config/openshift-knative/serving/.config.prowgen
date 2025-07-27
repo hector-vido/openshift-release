@@ -1,0 +1,36 @@
+slack_reporter:
+    - channel: '#knative-serving-ci'
+      job_names:
+        - periodic-ci-openshift-knative-serving-release-next-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-next-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-next-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-next-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-413-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-413-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-413-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-413-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-419-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.15-419-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-414-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-414-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-419-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.16-419-test-e2e-tls-c
+        - periodic-ci-openshift-knative-serving-release-v1.17-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.17-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.17-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.17-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.18-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.18-414-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.18-419-test-e2e-c
+        - periodic-ci-openshift-knative-serving-release-v1.18-419-test-e2e-c
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}} :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :volcano: {{end}}'

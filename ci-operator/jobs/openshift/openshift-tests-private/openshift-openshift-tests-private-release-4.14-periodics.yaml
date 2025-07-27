@@ -5821,15 +5821,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-4.14-upgrade-from-stable-4.14-aws-ipi-ovn-hypershift-mce-inplace-f60
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -5914,15 +5914,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-4.14-upgrade-from-stable-4.14-aws-ipi-ovn-hypershift-mce-replace-f60
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Upgrade Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -7239,15 +7239,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-4.14-upgrade-from-stable-4.14-baremetalds-agent-hypershift-mce-inplace-f60
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Upgrade Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -7496,15 +7496,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-4.14-upgrade-from-stable-4.14-baremetalds-kubevirt-hypershift-mce-replace-f60
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Upgrade Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -11191,15 +11191,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-f28-longduration-hive-remaining
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -11285,15 +11285,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-f28-longduration-hive-sd-rosa
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -11379,15 +11379,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-f28-longduration-hive-spec
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12137,15 +12137,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-arm-nodepool-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12231,15 +12231,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-arm-nodepool-guest-f28-destructive
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12325,15 +12325,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-arm-nodepool-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12419,15 +12419,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-fips-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12513,15 +12513,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-fips-guest-f28-destructive
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12607,15 +12607,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-fips-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12701,15 +12701,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-guest-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12795,15 +12795,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-install-f28-longduration
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12889,15 +12889,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12983,15 +12983,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-guest-f28-destructive
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13077,15 +13077,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-guest-f28-longduration
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13171,15 +13171,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-ibmz-guest-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13265,15 +13265,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-ibmz-mgmt-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13359,15 +13359,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13453,15 +13453,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-mgmt-f28-longduration
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13547,15 +13547,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-power-guest-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13641,15 +13641,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mce-power-mgmt-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13735,15 +13735,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-mgmt-critical-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13829,15 +13829,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-pub-private-guest-f28-destructive
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -13923,15 +13923,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-public-private-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -14017,15 +14017,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-ipi-ovn-hypershift-public-private-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15522,15 +15522,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-byo-kms-oidc-auditlog-int-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15616,15 +15616,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-byo-kms-oidc-auditlog-stage-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15710,15 +15710,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-int-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15804,15 +15804,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-private-proxy-int-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15898,15 +15898,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-private-proxy-stage-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -15992,15 +15992,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-rosa-hcp-stage-full-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -16584,15 +16584,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-aws-usgov-ipi-private-f28-longduration-hive
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -17342,15 +17342,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-azure-ipi-f28-longduration-part3-3
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -18432,15 +18432,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-azure-mag-ipi-f28-longduration-hive
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -20690,15 +20690,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-disconnected-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -20784,15 +20784,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-dualstack-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -20878,15 +20878,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-dualstack-guest-f28-des
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -20972,15 +20972,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-dualstack-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -21066,15 +21066,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -21160,15 +21160,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-guest-f28-des
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -21254,15 +21254,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-hypershift-agent-mce-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22011,15 +22011,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22104,15 +22104,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-guest-f28-destr
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22198,15 +22198,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-mce-guest-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22292,15 +22292,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-mce-guest-f28-des
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22386,15 +22386,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-mce-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -22479,15 +22479,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-baremetalds-ipi-ovn-kubevirt-hypershift-mgmt-f28
   reporter_config:
     slack:
-      channel: '#forum-prow-hypershift-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -23071,15 +23071,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-gcp-ipi-filestore-csi-f28-longduration-part3-3
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -24735,14 +24735,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-ibmcloud-ipi-ovn-ipsec-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -26312,14 +26313,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-nutanix-ipi-proxy-fips-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -28890,14 +28892,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-nightly-vsphere-ipi-proxy-fips-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -32751,15 +32754,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-byo-kms-oidc-auditlog-stage-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -32844,15 +32847,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-private-proxy-stage-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -32937,15 +32940,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-sector-byo-kms-oidc-auditlog-prod-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -33030,15 +33033,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-sector-private-proxy-prod-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -33123,15 +33126,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-sector-prod-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -33216,15 +33219,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-sector-prod-stable-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -33309,15 +33312,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-amd64-stable-aws-rosa-hcp-stage-critical-f28
   reporter_config:
     slack:
-      channel: '#managed-hypershift-ci-watcher'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -35454,15 +35457,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-arm64-nightly-aws-ipi-f28-longduration-mco-all
   reporter_config:
     slack:
-      channel: '#forum-ocp-mco-qe'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{if eq .Status.State "success"}} :rainbow: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :rainbow: {{else}}
-        :volcano: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> :volcano: {{end}}'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -36295,14 +36298,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-arm64-nightly-azure-ipi-disc-oidc-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -37716,14 +37720,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-arm64-nightly-gcp-ipi-disc-priv-oidc-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -46371,15 +46376,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-multi-nightly-aws-ipi-amd-f28-netobserv
   reporter_config:
     slack:
-      channel: '#team-qe-netobserv'
+      channel: '#aos-qe-logging'
       job_states_to_report:
       - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -46465,15 +46470,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-multi-nightly-aws-ipi-arm-f28-netobserv
   reporter_config:
     slack:
-      channel: '#team-qe-netobserv'
+      channel: '#aos-qe-logging'
       job_states_to_report:
       - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -47887,14 +47892,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.14-multi-nightly-aws-ipi-ovn-ipsec-pri-mixarch-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:

@@ -1,0 +1,31 @@
+slack_reporter:
+    - channel: '#recert-ci'
+      job_names:
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-serial
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.14-e2e-aws-ovn-single-node-recert-serial
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-serial
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.15-e2e-aws-ovn-single-node-recert-serial
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-baremetalds-sno-recert-cluster-rename
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-openshift-e2e-test-qe
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-parallel
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-serial
+        - periodic-ci-rh-ecosystem-edge-recert-main-4.16-e2e-aws-ovn-single-node-recert-serial
+      job_states_to_report:
+        - failure
+        - error
+      report_template: ':warning:  Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>'

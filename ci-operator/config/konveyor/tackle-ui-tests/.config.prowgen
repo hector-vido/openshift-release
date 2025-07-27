@@ -1,13 +1,14 @@
 slack_reporter:
-- channel: "#mta-interop"
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-                    ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-                     Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-                    logs> {{end}}'
-  job_names: 
-  - mta-interop-aws
-  - mta-interop-aws-fips
+    - channel: '#mta-interop'
+      job_names:
+        - mta-interop-aws
+        - mta-interop-aws-fips
+        - periodic-ci-konveyor-tackle-ui-tests-mta_7.2.0-mta-ocp4.16-lp-interop-mta-interop-aws
+        - periodic-ci-konveyor-tackle-ui-tests-mta_7.2.0-mta-ocp4.16-lp-interop-mta-interop-ibmcloud
+        - periodic-ci-konveyor-tackle-ui-tests-mta_7.2.0-mta-ocp4.17-lp-interop-mta-interop-aws
+        - periodic-ci-konveyor-tackle-ui-tests-mta_7.2.0-mta-ocp4.18-lp-interop-mta-interop-aws
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

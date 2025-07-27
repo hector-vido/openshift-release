@@ -1,13 +1,16 @@
 slack_reporter:
-- channel: '#team-camel-quarkus-qe'
-  job_states_to_report:
-  - success
-  - failure
-  - error
-  report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed:
-        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> {{end}}'
-  job_names:
-  - camel-quarkus-interop-aws
-  - camel-quarkus-interop-aws-fips
+    - channel: '#team-camel-quarkus-qe'
+      job_names:
+        - camel-quarkus-interop-aws
+        - camel-quarkus-interop-aws-fips
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.14-lp-interop-camel-quarkus-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.15-lp-interop-camel-quarkus-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.16-lp-interop-camel-quarkus-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.17-lp-interop-camel-quarkus-interop-ibmcloud
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.19-lp-interop-camel-quarkus-interop-aws
+        - periodic-ci-jboss-fuse-camel-quarkus-openshift-interop-main-camel-quarkus-ocp4.19-lp-interop-camel-quarkus-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

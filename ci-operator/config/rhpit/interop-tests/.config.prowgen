@@ -1,0 +1,28 @@
+slack_reporter:
+    - channel: '#team-qe-lp-triage'
+      job_names:
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-420
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-420
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-420-fips
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-420-fips
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-zstream-n-1
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-zstream-n-1
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-zstream-n-2
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-layered-product-interop-zstream-n-2
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-lp-watcher-bot-message-420
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-lp-watcher-bot-message-420
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-lp-watcher-bot-message-420-fips
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-ocp-self-managed-lp-watcher-bot-message-420-fips
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-opp-interop-jobs-trigger
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-opp-interop-jobs-trigger
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-opp-interop-jobs-watcher-bot-message
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-opp-interop-jobs-watcher-bot-message
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-rosa-classic-sts-layered-product-interop-416
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-rosa-classic-sts-layered-product-interop-416
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-rosa-sts-hypershift-layered-product-interop-416
+        - periodic-ci-rhpit-interop-tests-main-weekly_trigger-rosa-sts-hypershift-layered-product-interop-416
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

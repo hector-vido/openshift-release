@@ -1,0 +1,11 @@
+slack_reporter:
+    - channel: '#alerts-sd-docs-prs'
+      job_names:
+        - periodic-ci-openshift-managed-notifications-master-checklinks-weekly
+        - periodic-ci-openshift-managed-notifications-master-checklinks-weekly
+      job_states_to_report:
+        - failure
+        - error
+      report_template: |
+        Weekly check-links job has found broken URLs in <https://github.com/openshift/managed-notifications|Managed Notifications repository>.
+        To see list of broken URLs, <{{.Status.URL}}|see log>.

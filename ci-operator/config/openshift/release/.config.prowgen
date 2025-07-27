@@ -1,39 +1,142 @@
 slack_reporter:
-- channel: '#ops-testplatform'
-  job_states_to_report:
-  - failure
-  - error
-  report_template: |
-    :warning: HyperShift daily sanity check ended with *{{.Status.State}}*.
-    <{{.Status.URL}}|View logs>.
-  job_names:
-  - periodic-ci-openshift-hypershift-hosted
-- channel: "#forum-ocp-splat-alerts"
-  job_states_to_report:
-  - failure
-  - error
-  report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-    {{ else }} :red_jenkins_circle: {{ end }} Periodical job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-    <{{.Status.URL}}|View logs>'
-  job_names: # Listing of job names (ci-operator's 'as' field) that this configuration applies to
-  - e2e-vsphere-externallb-ovn
-  - e2e-vsphere-multi-vcenter-ovn
-  - e2e-vsphere-ovn
-  - e2e-vsphere-ovn-multi-disk
-  - e2e-vsphere-ovn-multi-network
-  - e2e-vsphere-ovn-serial
-  - e2e-vsphere-ovn-techpreview
-  - e2e-vsphere-ovn-techpreview-serial
-  - e2e-vsphere-ovn-upi
-  - e2e-vsphere-ovn-upi-serial
-  - e2e-vsphere-ovn-zones
-  - e2e-vsphere-static-ovn
-  excluded_variants:
-  - okd-scos-4.20
-  - okd-scos-4.19
-  - okd-scos-4.18
-  - okd-scos-4.17
-  - okd-scos-4.16
-  - okd-4.18
-  - okd-4.17
-  - okd-4.16
+    - channel: '#ops-testplatform'
+      job_names:
+        - periodic-ci-openshift-hypershift-hosted
+        - periodic-ci-openshift-release-master-ci-4.19-e2e-vsphere-ovn-upgrade
+        - periodic-ci-openshift-release-master-hypershift-4.19-periodic-ci-openshift-hypershift-hosted
+        - periodic-ci-openshift-release-master-hypershift-4.20-periodic-ci-openshift-hypershift-hosted
+        - periodic-ci-openshift-release-master-nightly-4.10-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.11-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.12-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.13-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.14-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-aws-ovn-edge-zones-manifest-validation
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-external-vsphere-ccm
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.15-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-aws-ovn-edge-zones-manifest-validation
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-external-aws
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-external-aws-ccm
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.16-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-external-aws
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-external-aws-ccm
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.17-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-external-aws
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-external-aws-ccm
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-external-vsphere-ccm
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-csi-operator-test
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-csi
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-etcd-scaling
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-multi-network
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-multi-vcenter
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-upi-multi-vcenter
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-upi-zones
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.18-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.18-upgrade-from-stable-4.17-e2e-vsphere-upgrade
+        - periodic-ci-openshift-release-master-nightly-4.18-upgrade-from-stable-4.17-e2e-vsphere-zones-upgrade
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-multi-network
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.19-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-externallb-ovn
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-multi-network
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-serial
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-techpreview
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-techpreview-serial
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-upi
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-upi-serial
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-ovn-zones
+        - periodic-ci-openshift-release-master-nightly-4.20-e2e-vsphere-static-ovn
+        - periodic-ci-openshift-release-master-nightly-4.7-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.8-e2e-vsphere-ovn
+        - periodic-ci-openshift-release-master-nightly-4.9-e2e-vsphere-ovn
+      job_states_to_report:
+        - failure
+        - error
+      report_template: |
+        :warning: HyperShift daily sanity check ended with *{{.Status.State}}*.
+        <{{.Status.URL}}|View logs>.
+    - channel: '#forum-ocp-splat-alerts'
+      excluded_variants:
+        - okd-scos-4.20
+        - okd-scos-4.19
+        - okd-scos-4.18
+        - okd-scos-4.17
+        - okd-scos-4.16
+        - okd-4.18
+        - okd-4.17
+        - okd-4.16
+      job_names:
+        - e2e-vsphere-externallb-ovn
+        - e2e-vsphere-multi-vcenter-ovn
+        - e2e-vsphere-ovn
+        - e2e-vsphere-ovn-multi-disk
+        - e2e-vsphere-ovn-multi-network
+        - e2e-vsphere-ovn-serial
+        - e2e-vsphere-ovn-techpreview
+        - e2e-vsphere-ovn-techpreview-serial
+        - e2e-vsphere-ovn-upi
+        - e2e-vsphere-ovn-upi-serial
+        - e2e-vsphere-ovn-zones
+        - e2e-vsphere-static-ovn
+      job_states_to_report:
+        - failure
+        - error
+      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle: {{ else }} :red_jenkins_circle: {{ end }} Periodical job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs>'

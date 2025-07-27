@@ -10764,12 +10764,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-aws-ipi-f60-longduration-part3-3
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: Job {{.Spec.Job}} failed. <{{.Status.URL}}|View logs>
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -10855,15 +10858,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-aws-ipi-f60-netobserv
   reporter_config:
     slack:
-      channel: '#team-qe-netobserv'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - success
-      - failure
       - aborted
       - error
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      - failure
+      - pending
+      - success
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -12028,14 +12031,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-aws-ipi-pri-shared-vpc-phz-sts-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -16437,12 +16441,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-azure-ipi-f60-longduration-part3-3
   reporter_config:
     slack:
-      channel: '#forum-prow-hive-qe-ci'
+      channel: '#aos-qe-logging'
       job_states_to_report:
-      - failure
+      - aborted
       - error
+      - failure
+      - pending
       - success
-      report_template: Job {{.Spec.Job}} failed. <{{.Status.URL}}|View logs>
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -16694,14 +16701,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-azure-ipi-fullyprivate-proxy-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -21854,14 +21862,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-gcp-ipi-proxy-private-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -23768,14 +23777,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-ibmcloud-ipi-mini-perm-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -24439,14 +24449,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-nutanix-ipi-proxy-fips-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:
@@ -25515,14 +25526,15 @@ periodics:
   name: periodic-ci-openshift-openshift-tests-private-release-4.12-amd64-nightly-vsphere-ipi-ovn-ipsec-f60-longduration-cloud
   reporter_config:
     slack:
-      channel: '#forum-prow-long-duration-cloudinfra-testcases'
+      channel: '#aos-qe-logging'
       job_states_to_report:
+      - aborted
       - error
       - failure
+      - pending
       - success
-      report_template: '{{ if eq .Status.State "success" }} :green_jenkins_circle:
-        {{ else }} :red_jenkins_circle: {{ end }} Job *{{.Spec.Job}}* ended with *{{.Status.State}}*.
-        <{{.Status.URL}}|View logs>'
+      report_template: Job {{.Spec.Job}} state is *{{.Status.State}}* <{{.Status.URL}}|View
+        logs>
   spec:
     containers:
     - args:

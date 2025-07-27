@@ -1,0 +1,13 @@
+slack_reporter:
+    - channel: '#forum-ocp-winc'
+      job_names:
+        - periodic-ci-openshift-windows-machine-config-operator-community-4.13-okd-aws-e2e-operator
+        - periodic-ci-openshift-windows-machine-config-operator-community-4.13-okd-aws-e2e-operator
+        - periodic-ci-openshift-windows-machine-config-operator-community-4.15-okd-aws-e2e-operator
+        - periodic-ci-openshift-windows-machine-config-operator-community-4.15-okd-aws-e2e-operator
+        - periodic-ci-openshift-windows-machine-config-operator-master-vsphere-e2e-ccm-install
+        - periodic-ci-openshift-windows-machine-config-operator-master-vsphere-e2e-ccm-install
+      job_states_to_report:
+        - failure
+        - error
+      report_template: <!subteam^S025TMX0LF3> Job {{.Spec.Job}} ended with {{.Status.State}}. <{{.Status.URL}}|View logs>. Please investigate.

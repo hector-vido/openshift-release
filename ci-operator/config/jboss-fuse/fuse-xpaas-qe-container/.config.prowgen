@@ -1,14 +1,18 @@
 slack_reporter:
-  - channel: "#foo-qe"
-    job_states_to_report:
-      - success
-      - failure
-      - error
-    report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}*
-        ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire:
-        Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View
-        logs> {{end}}'
-    job_names:
-      - jboss-fuse-interop-aws
-      - jboss-fuse-interop-aws-fips
-
+    - channel: '#foo-qe'
+      job_names:
+        - jboss-fuse-interop-aws
+        - jboss-fuse-interop-aws-fips
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.14-lp-interop-jboss-fuse-interop-aws
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.15-lp-interop-jboss-fuse-interop-ibmcloud
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.16-lp-interop-jboss-fuse-interop-ibmcloud
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.17-lp-interop-jboss-fuse-interop-aws
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.18-lp-interop-jboss-fuse-interop-aws
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.18-lp-interop-jboss-fuse-interop-aws-fips
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.19-lp-interop-jboss-fuse-interop-aws
+        - periodic-ci-jboss-fuse-fuse-xpaas-qe-container-main-jboss-fuse-ocp4.19-lp-interop-jboss-fuse-interop-aws-fips
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :success: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :dumpster-fire: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

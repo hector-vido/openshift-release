@@ -1,0 +1,16 @@
+slack_reporter:
+    - channel: '#ols-perf-scale-ci-results'
+      job_names:
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-100workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-100workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-10workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-10workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-25workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-25workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-50workers
+        - periodic-ci-openshift-ols-load-generator-main-ols-load-test-50workers
+      job_states_to_report:
+        - success
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :white_check_mark: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :white_check_mark: {{else}} :warning:  Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> :warning: {{end}}'

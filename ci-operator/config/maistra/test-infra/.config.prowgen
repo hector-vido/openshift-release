@@ -1,0 +1,13 @@
+slack_reporter:
+    - channel: '#istio-notifications'
+      job_names:
+        - periodic-ci-maistra-test-infra-main-sync-upstream-envoy-2.3
+        - periodic-ci-maistra-test-infra-main-sync-upstream-envoy-2.3
+        - periodic-ci-maistra-test-infra-main-sync-upstream-envoy-2.4
+        - periodic-ci-maistra-test-infra-main-sync-upstream-envoy-2.4
+        - periodic-ci-maistra-test-infra-main-sync-upstream-istio-2.4
+        - periodic-ci-maistra-test-infra-main-sync-upstream-istio-2.4
+      job_states_to_report:
+        - failure
+        - error
+      report_template: '{{if eq .Status.State "success"}} :slack-green: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{else}} :failed: Job *{{.Spec.Job}}* ended with *{{.Status.State}}*. <{{.Status.URL}}|View logs> {{end}}'

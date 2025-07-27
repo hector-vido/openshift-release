@@ -1,0 +1,45 @@
+slack_reporter:
+    - channel: '#team-hive-alert'
+      job_names:
+        - periodic-ci-openshift-cloud-credential-operator-master-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-master-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.15-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.16-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.17-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.18-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.19-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-aws-manual-oidc-cron
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-azure-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-gcp-manual-oidc
+        - periodic-ci-openshift-cloud-credential-operator-release-4.20-periodics-e2e-gcp-manual-oidc
+      job_states_to_report:
+        - failure
+        - error
+      report_template: Job {{.Spec.Job}} failed. <{{.Status.URL}}|View logs>
