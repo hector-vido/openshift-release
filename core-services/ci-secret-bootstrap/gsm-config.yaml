@@ -14988,6 +14988,8 @@ bundles:
     targets:
       - cluster: core-ci
         namespace: openshift-monitoring
+      - cluster: core-ci
+        namespace: openshift-user-workload-monitoring
 
   - name: thanos-object-storage
     gsm_secrets:
